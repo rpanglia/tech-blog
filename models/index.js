@@ -1,6 +1,6 @@
 const User = require('./User');
-const Post = require('./Post');
-const Comment = require('./Comment');
+const Post = require('./Posts');
+const Comment = require('./Comments');
 
 
 // User has many posts -- deleting a user will delete their posts
