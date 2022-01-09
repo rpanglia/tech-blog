@@ -7,12 +7,12 @@ class Post extends Model {}
 // define fields/columns (id, title, post-content, user-id) 
 Post.init(
     {
-        id: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-            primaryKey: true,
-            autoIncrement: true
-        },
+        // id: {
+        //     type: DataTypes.INTEGER,
+        //     allowNull: false,
+        //     primaryKey: true,
+        //     autoIncrement: true
+        // },
 
         title: {
             type: DataTypes.STRING,
