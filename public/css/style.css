@@ -10,12 +10,13 @@ body, html {
     color: rgb(42, 42, 197);
 }
 
-.nav {
+.nav-text {
     text-decoration: none;
     color: rgb(205, 253, 255);
     font-weight: bold;
     transition: color .1s;
     font-size: 24px;
+    padding: 5px
 }
 
 .nav-text:hover {
