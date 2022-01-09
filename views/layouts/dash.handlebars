@@ -10,37 +10,29 @@
 </head>
 
 <body>
-    
     <div class="wrapper">
-
         <header>
             <h1>
-                <a href="/" class="nav-text">Tech Blog</a>
+                <a class="nav-text" href="/">Tech.Blog</a>
             </h1>
             <nav>
-                <a href="/home" class="nav-text">Home</a>
-                <a href="/dashboard" class="nav-text">Dashboard</a>
-                
-                {{#if loggedIn}}
-                <button id="logout" class="btn-logoout">Logout</button>
-
-                {{else}}
-                <a href="/login" class="nav-text">Login</a>
-                {{/if}}
+                <a class="nav-text" href="/home">Home</a> 
+                <button id="logout" class="btn-logout">Logout</button>
             </nav>
         </header>
-
         <main>
-            {{{ body }}}
-        </main>
 
+        {{{ body }}}
+
+        </main>
         <footer>
         Thanks for checking out the Tech Blog!
         </footer>
-
     </div>
 
+    {{#if loggedIn}}
     <script src="/js/logout.js"></script>
+    {{/if}}
 </body>
 
-</html> 
+</html>

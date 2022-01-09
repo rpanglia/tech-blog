@@ -2,16 +2,20 @@
     <h2>Create a New Blog Post</h2>
 
     <form class="new-post-form">
+
         <div>
             <label for="post-title">Title</label>
-            <input type="text" id="post-title" name="post-title" />
+            <textarea rows="4" id="post-title" name="post-title"></textarea>
         </div>
+
         <div>
             <label for="post-content">Content</label>
-            <input id="post-content" name="post-content" />
+            <textarea rows="4" id="post-content" name="post-content"></textarea>
         </div>
+
         <button type="submit" class="btn">Create</button>
     </form>
+    
 </section>
 
 {{#if posts.length}}
@@ -21,6 +25,7 @@
         {{#each posts as |post|}}
         <li>
         {{> post-info post}}
+        <br>
         <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit Blog Post</a>
         </li>
         {{/each}}

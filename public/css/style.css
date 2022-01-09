@@ -22,6 +22,11 @@ body, html {
     color: #75a4dd;
 }
 
+ul {
+    list-style: none;
+}
+
+
 button {
     background-color: #1578e2;
     border: 0;
@@ -168,6 +173,7 @@ background-color: #7cac78;
 }
 
 .btn-logout {
+    display: inline;
     background-color: #1578e2 !important;
     text-decoration: none;
     color: rgb(205, 235, 255);
