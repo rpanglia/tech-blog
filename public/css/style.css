@@ -132,6 +132,16 @@ main {
     color: #7d7d7d;
 }
 
+h4 {
+    font-size: larger;
+    font-weight: bold;
+}
+.comment-txt {
+    font-size: smaller;
+    font-weight: 200;
+    color: black;
+}
+
 .upvote-btn {
     background-color: #0cc477;
     transition: background-color .1s;
@@ -160,8 +170,9 @@ background-color: #7cac78;
     opacity: .6;
 }
 
-.new-post-form input {
-    width: 300px;   
+.new-post-form textarea {
+    min-width: 50%;
+    min-height: 100px; 
 }
 
 .edit-post-form {
