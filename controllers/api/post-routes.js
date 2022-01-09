@@ -65,10 +65,10 @@ router.get('/:id', (req,res) => {
     })
     .then(dbPostData => {
         if (!dbPostData) {
-            res.status(404).json({ message: 'No post found with this id' });
+            res.status(404).json({ message: 'No post found with this id!' });
             return;
         }
-        res.json(dbPostData);
+        res.json(dbPostData);  
     })
     .catch(err => {
         console.log(err);
@@ -92,6 +92,7 @@ router.post('/', withAuth, (req, res) => {
 
 // PUT
 router.put('/:id', (req,res) => {
+
     Post.update(
         {
             title: req.body.title,
@@ -105,7 +106,7 @@ router.put('/:id', (req,res) => {
     )
     .then(dbPostData => {
         if (!dbPostData) {
-            res.status(404).json({ message: 'No post found with this id' });
+            res.status(404).json({ message: 'No post found with this id!' });
             return;
         }
         res.json(dbPostData);
@@ -118,6 +119,7 @@ router.put('/:id', (req,res) => {
 
 // delete via id
 router.delete('/:id', withAuth, (req, res) => {
+    
     Post.destroy({
         where: {
             id: req.params.id
@@ -125,7 +127,7 @@ router.delete('/:id', withAuth, (req, res) => {
     })
     .then(dbPostData => {
         if (!dbPostData) {
-            res.status(404).json({ message: 'No post found with this id' });
+            res.status(404).json({ message: 'No post found with this id!' });
             return;
         }
         res.json(dbPostData);

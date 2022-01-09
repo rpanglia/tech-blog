@@ -15,7 +15,7 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 const sess = {
-    secret: process.env.SECRET,
+    secret: 'secret secret',
     cookie: {},
     resave: false,
     saveUninitialized: true,
@@ -24,7 +24,7 @@ const sess = {
     })
 };
 app.use(session(sess));
-app.use(routes); //turning on routes
+app.use(routes);
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));

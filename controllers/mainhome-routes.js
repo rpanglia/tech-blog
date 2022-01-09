@@ -69,7 +69,7 @@ router.get('/post/:id', (req, res) => {
     })
         .then(dbPostData => {
         if (!dbPostData) {
-            res.status(404).json({ message: 'No post found with this id' });
+            res.status(404).json({ message: 'No post found with this id!' });
             return;
         }
 
@@ -88,11 +88,11 @@ router.get('/post/:id', (req, res) => {
 
 router.get('/login', (req, res) => {
     if (req.session.loggedIn) {
-        res.redirect('/');
+        // res.redirect('/');
         return;
     }
 
-    // res.render('login');
+    res.render('login');
 });
 
 module.exports = router;
