@@ -9,7 +9,7 @@ const routes = require('./controllers');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const helpers = require('./utils/helpers');
-const hbs = exphbs.create({ helpers });
+const hbs = exphbs.create({});
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -32,6 +32,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
+
+app.get('/', function (req, res) {
+    res.render('homepage');
+});
 
 sequelize.sync({ force: false }).then(() => {
     app.listen(PORT, () => console.log(`Now listening on ${PORT}`));
