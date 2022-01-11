@@ -34,7 +34,7 @@ router.get('/', withAuth, (req, res) => {
             model: User,
             attributes: ['username']
         }
-        ]
+        ],
     })
     .then(dbPostData => {
     const posts = dbPostData.map(post => post.get({ plain: true }));
@@ -47,7 +47,10 @@ router.get('/', withAuth, (req, res) => {
 });
 
 router.get('/edit/:id', withAuth, (req, res) => {
-    Post.findByPk(req.params.id, {
+    Post.findOne({
+        where: {
+            id: req.params.id, 
+        },
         attributes: [
             'id',
             'post_content',
@@ -60,17 +63,17 @@ router.get('/edit/:id', withAuth, (req, res) => {
             attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
             include: {
             model: User,
-            attributes: ['username']
+            attributes: ['username'],
             }
         },
         {
             model: User,
-            attributes: ['username']
+            attributes: ['username'],
         }
-        ]
+        ],
     })
-    .then(dbPostData => {
-    if (dbPostData) {
+    .then(dbPostData => { 
+    if (!dbPostData) {
         const post = dbPostData.get({ plain: true });
 
         res.render('edit-post', {
